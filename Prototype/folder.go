@@ -2,15 +2,10 @@ package main
 
 import "fmt"
 
-type Folder struct {
-	children []INode
-	name     string
-}
-
 func (f *Folder) print(indentation string) {
-	fmt.Println(indentation + f.name)
+	fmt.Println("|" + indentation + f.name)
 	for _, i := range f.children {
-		i.print(indentation + indentation)
+		i.print("-" + indentation + indentation)
 	}
 }
 
